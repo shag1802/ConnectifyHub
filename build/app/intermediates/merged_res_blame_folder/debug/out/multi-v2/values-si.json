@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.demo.app-mergeDebugResources-27:/values-si/values-si.xml",
+            "outputFile": "com.example.demo.app-mergeDebugResources-29:/values-si/values-si.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\3b15f093a1d4ccfedac46d94f54273e7\\transformed\\browser-1.4.0\\res\\values-si\\values-si.xml",

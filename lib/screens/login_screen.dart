@@ -95,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 RoundedLoadingButton(
                     onPressed: () {
-                      // handleFacebookAuth();
+                      handleFacebookAuth();
                     },
                     controller: facebookController,
                     successColor: Colors.blue,
@@ -169,44 +169,44 @@ class _LoginScreenState extends State<LoginScreen> {
 
   // handling facebookauth
   // handling google sigin in
-  // Future handleFacebookAuth() async {
-  //   final sp = context.read<SignInProvider>();
-  //   final ip = context.read<InternetProvider>();
-  //   await ip.checkInternetConnection();
+  Future handleFacebookAuth() async {
+    final sp = context.read<SignInProvider>();
+    final ip = context.read<InternetProvider>();
+    await ip.checkInternetConnection();
 
-  //   if (ip.hasInternet == false) {
-  //     openSnackbar(context, "Check your Internet connection", Colors.red);
-  //     facebookController.reset();
-  //   } else {
-  //     await sp.signInWithFacebook().then((value) {
-  //       if (sp.hasError == true) {
-  //         openSnackbar(context, sp.errorCode.toString(), Colors.red);
-  //         facebookController.reset();
-  //       } else {
-  //         // checking whether user exists or not
-  //         sp.checkUserExists().then((value) async {
-  //           if (value == true) {
-  //             // user exists
-  //             await sp.getUserDataFromFirestore(sp.uid).then((value) => sp
-  //                 .saveDataToSharedPreferences()
-  //                 .then((value) => sp.setSignIn().then((value) {
-  //                       facebookController.success();
-  //                       handleAfterSignIn();
-  //                     })));
-  //           } else {
-  //             // user does not exist
-  //             sp.saveDataToFirestore().then((value) => sp
-  //                 .saveDataToSharedPreferences()
-  //                 .then((value) => sp.setSignIn().then((value) {
-  //                       facebookController.success();
-  //                       handleAfterSignIn();
-  //                     })));
-  //           }
-  //         });
-  //       }
-  //     });
-  //   }
-  // }
+    if (ip.hasInternet == false) {
+      openSnackbar(context, "Check your Internet connection", Colors.red);
+      facebookController.reset();
+    } else {
+      await sp.signInWithFacebook().then((value) {
+        if (sp.hasError == true) {
+          openSnackbar(context, sp.errorCode.toString(), Colors.red);
+          facebookController.reset();
+        } else {
+          // checking whether user exists or not
+          sp.checkUserExists().then((value) async {
+            if (value == true) {
+              // user exists
+              await sp.getUserDataFromFirestore(sp.uid).then((value) => sp
+                  .saveDataToSharedPreferences()
+                  .then((value) => sp.setSignIn().then((value) {
+                        facebookController.success();
+                        handleAfterSignIn();
+                      })));
+            } else {
+              // user does not exist
+              sp.saveDataToFirestore().then((value) => sp
+                  .saveDataToSharedPreferences()
+                  .then((value) => sp.setSignIn().then((value) {
+                        facebookController.success();
+                        handleAfterSignIn();
+                      })));
+            }
+          });
+        }
+      });
+    }
+  }
 
   // handle after signin
   handleAfterSignIn() {
