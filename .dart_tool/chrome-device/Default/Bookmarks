@@ -1,0 +1,99 @@
+{
+   "checksum": "cb2ccd7c97d7b6d84568d814a92986f3",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13345713436883572",
+            "date_last_used": "0",
+            "guid": "047d798d-2c82-4afb-a5af-bb7083b6c72b",
+            "id": "9",
+            "name": "Booking.com",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://www.booking.com/index.html?aid=1980379&label=edge2020"
+         }, {
+            "date_added": "13345713436883403",
+            "date_last_used": "0",
+            "guid": "c7b7c412-72cb-44c1-8b5f-e3b31049acfb",
+            "id": "8",
+            "name": "Express VPN",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "http://js.redirect.hp.com/jumpstation?bd=expressvpn&c=*&locale=en_us&pf=*&s=*&tp=edge"
+         }, {
+            "date_added": "13345713436880269",
+            "date_last_used": "0",
+            "guid": "0efc1020-b9df-4daa-ab8d-130c540109e2",
+            "id": "7",
+            "name": "LastPass password manager",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "http://js.redirect.hp.com/jumpstation?bd=lastpass&c=*&locale=*&pf=*&s=*&tp=edge"
+         }, {
+            "date_added": "13273795442182789",
+            "date_last_used": "0",
+            "guid": "ad262970-06dc-4f42-ab34-bc44d24273b5",
+            "id": "10",
+            "name": "Booking.com",
+            "show_icon": false,
+            "source": "import_fre",
+            "type": "url",
+            "url": "http://secure.rezserver.com/sdk/v1/LinkFwd?refid=9006&destination=booking&refclickid=webslice1819"
+         } ],
+         "date_added": "13345713436679191",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "children": [ {
+               "date_added": "13273795442176284",
+               "date_last_used": "0",
+               "guid": "c719321a-172d-45a5-a466-26cae86e84af",
+               "id": "12",
+               "name": "Booking.com",
+               "show_icon": false,
+               "source": "import_fre",
+               "type": "url",
+               "url": "http://secure.rezserver.com/sdk/v1/LinkFwd?refid=9006&destination=booking&refclickid=iefav1819"
+            } ],
+            "date_added": "13345713440855560",
+            "date_last_used": "0",
+            "date_modified": "0",
+            "guid": "983de370-77eb-49e1-bc20-c3560d8c3c97",
+            "id": "11",
+            "name": "HP",
+            "source": "import_fre",
+            "type": "folder"
+         } ],
+         "date_added": "13345713436679192",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13345713436679195",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
