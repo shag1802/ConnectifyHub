@@ -1,3 +1,3 @@
 class Config {
-  static final app_icon = "assets/logo.png";
+  static final app_icon = "assets/l2.png";
 }

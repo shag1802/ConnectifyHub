@@ -1,4 +1,5 @@
 import 'package:demo/screens/home_screen.dart';
+import 'package:demo/screens/email_login.dart';
 import 'package:demo/utils/config.dart';
 import 'package:demo/utils/snack_bar.dart';
 import 'package:demo/utils/next_screen.dart';
@@ -22,40 +23,45 @@ class _LoginScreenState extends State<LoginScreen> {
       RoundedLoadingButtonController();
   final RoundedLoadingButtonController facebookController =
       RoundedLoadingButtonController();
+  final RoundedLoadingButtonController phoneController =
+      RoundedLoadingButtonController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 255, 203, 126),
       body: SafeArea(
           child: Padding(
         padding:
             const EdgeInsets.only(left: 40, right: 40, top: 90, bottom: 30),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Flexible(
               flex: 2,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image(
                     image: AssetImage(Config.app_icon),
-                    height: 80,
-                    width: 80,
+                    height: 180,
+                    width: 180,
                     fit: BoxFit.cover,
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text("Welcome to Flutter Firebase",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+                  const Text("Welcome to ConnectifyHub",
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.deepPurple,
+                          fontWeight: FontWeight.w500)),
                   const SizedBox(
                     height: 15,
                   ),
-                  Text("Learn Authentication With Provider",
-                      style: TextStyle(fontSize: 15, color: Colors.grey[700]))
+                  Text("Multi-Mode Login Hub",
+                      style: TextStyle(fontSize: 20, color: Colors.black))
                 ],
               ),
             ),
@@ -120,6 +126,40 @@ class _LoginScreenState extends State<LoginScreen> {
                                 fontWeight: FontWeight.w500)),
                       ],
                     )),
+                const SizedBox(
+                  height: 10,
+                ),
+
+                // Phone Auth loading button
+                RoundedLoadingButton(
+                  onPressed: () {
+                    nextScreenReplace(context, const EmailLogin());
+                    phoneController.reset();
+                  },
+                  controller: phoneController,
+                  successColor: Colors.black,
+                  width: MediaQuery.of(context).size.width * 0.80,
+                  elevation: 0,
+                  borderRadius: 25,
+                  color: Colors.black,
+                  child: Wrap(
+                    children: const [
+                      Icon(
+                        FontAwesomeIcons.envelope,
+                        size: 20,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text("Continue with Email",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500)),
+                    ],
+                  ),
+                ),
               ],
             )
           ],

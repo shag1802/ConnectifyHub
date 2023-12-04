@@ -28,13 +28,14 @@ class _HomeScreenState extends State<HomeScreen> {
     // change read to watch!!!!
     final sp = context.watch<SignInProvider>();
     return Scaffold(
+      // backgroundColor: Col
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             CircleAvatar(
-              backgroundColor: Colors.white,
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
               backgroundImage: NetworkImage("${sp.imageUrl}"),
               radius: 50,
             ),
@@ -49,14 +50,14 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 10,
             ),
             Text(
-              "${sp.email}",
+              "Email: ${sp.email}",
               style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
             ),
             const SizedBox(
               height: 10,
             ),
             Text(
-              "${sp.uid}",
+              "UniqueUserID: ${sp.uid}",
               style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
             ),
             const SizedBox(
@@ -73,6 +74,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text("${sp.provider}".toUpperCase(),
                     style: const TextStyle(color: Colors.red)),
               ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Hi, ${sp.name} Your presence makes our app brighter.",
+              style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.blue),
             ),
             const SizedBox(
               height: 20,

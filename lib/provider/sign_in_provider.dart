@@ -1,9 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:google_sign_in/google_sign_in.dart';
-// import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,6 +6,7 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
+import 'package:uuid/uuid.dart';
 
 class SignInProvider extends ChangeNotifier {
   // instance of firebaseauth, facebook and google
@@ -130,7 +125,9 @@ class SignInProvider extends ChangeNotifier {
         // saving the values
         _name = profile['name'];
         _email = profile['email'];
-        _imageUrl = profile['picture']['data']['url'];
+        // _imageUrl = profile['picture']['data']['url'];
+        _imageUrl =
+            'https://commons.wikimedia.org/wiki/File:Facebook_f_logo_(2019).svg';
         _uid = profile['id'];
         _hasError = false;
         _provider = "FACEBOOK";
@@ -207,6 +204,8 @@ class SignInProvider extends ChangeNotifier {
     _uid = s.getString('uid');
     _provider = s.getString('provider');
     notifyListeners();
+    // print("hello");
+    // print(_uid);
   }
 
   // checkUser exists or not in cloudfirestore
@@ -237,5 +236,16 @@ class SignInProvider extends ChangeNotifier {
   Future clearStoredData() async {
     final SharedPreferences s = await SharedPreferences.getInstance();
     s.clear();
+  }
+
+  void emailUser(email, name, userid) {
+    var uuid = Uuid();
+    _name = name;
+    _email = email;
+    _imageUrl =
+        "https://winaero.com/blog/wp-content/uploads/2017/12/User-icon-256-blue.png";
+    _uid = userid;
+    _provider = "EMAIL LOGIN";
+    notifyListeners();
   }
 }

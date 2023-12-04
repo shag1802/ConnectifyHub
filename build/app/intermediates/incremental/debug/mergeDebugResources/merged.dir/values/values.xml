@@ -401,6 +401,7 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="copy_toast_msg">Link copied to clipboard</string>
+    <string name="default_web_client_id" translatable="false">1090308652403-ffnl2kvgkd99jf7sononudb78rs2p5rl.apps.googleusercontent.com</string>
     <string name="facebook_app_id">737678138388465</string>
     <string name="facebook_client_token">1bc88d88c3a9220799c3afd48bba8dd9</string>
     <string name="fallback_menu_item_copy_link">Copy link</string>
