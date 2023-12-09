@@ -168,6 +168,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+//Handeling Google sign un
   Future handleGoogleSignIn() async {
     final sp = context.read<SignInProvider>();
     final ip = context.read<InternetProvider>();
@@ -208,7 +209,6 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   // handling facebookauth
-  // handling google sigin in
   Future handleFacebookAuth() async {
     final sp = context.read<SignInProvider>();
     final ip = context.read<InternetProvider>();

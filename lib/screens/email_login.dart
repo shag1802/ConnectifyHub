@@ -149,6 +149,7 @@ class _EmailLoginState extends State<EmailLogin> {
     );
   }
 
+  //handeling sign in for normal email and password login .
   void _signIn() async {
     final sp = context.read<SignInProvider>();
     setState(() {
@@ -181,6 +182,7 @@ class _EmailLoginState extends State<EmailLogin> {
     }
   }
 
+//handeling sign up for normal email and password login .
   void _signUp() async {
     setState(() {
       isSigningUp = true;

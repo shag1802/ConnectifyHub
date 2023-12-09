@@ -238,6 +238,7 @@ class SignInProvider extends ChangeNotifier {
     s.clear();
   }
 
+  //Fuction to save the data for normal email and password login .
   void emailUser(email, name, userid) {
     var uuid = Uuid();
     _name = name;

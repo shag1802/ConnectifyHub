@@ -6,7 +6,7 @@ class FirebaseAuthService {
   FirebaseAuth _auth = FirebaseAuth.instance;
   // final sp = context.read<SignInProvider>();
   SignInProvider sp = SignInProvider();
-
+  // Signup method Implementation for Normal Email and Password Login
   Future<User?> signUpWithEmailAndPassword(
       String username, String email, String password) async {
     try {
@@ -32,6 +32,7 @@ class FirebaseAuthService {
     return null;
   }
 
+  // SignIn method Implementation for Normal Email and Password Login
   Future<User?> signInWithEmailAndPassword(
       String email, String password) async {
     try {
